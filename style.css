@@ -1,0 +1,14 @@
+.abs {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    padding: 10px 15px;
+    font-size: 24px;
+    background-color: #6dbdaa;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}

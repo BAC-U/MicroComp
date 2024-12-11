@@ -1,0 +1,30 @@
+[
+    {
+        "type": "function",
+        "message0": "%1 FUNCTION %2 %3",
+        "args0": [
+            {
+                "type": "field_image",
+                "src": "https://raw.githubusercontent.com/Owen1212055/mc-assets/main/assets/LAPIS_BLOCK.png",
+                "width": 30,
+                "height": 30,
+                "alt": "Function",
+                "flipRtl": false
+            },
+            {
+                "type": "field_input",
+                "name": "name",
+                "text": "Enter name",
+                "spellcheck": false
+            },
+            {
+                "type": "input_statement",
+                "name": "blox"
+            }
+        ],
+        "colour": 230,
+        "tooltip": "New function",
+        "helpUrl": "https://github.com/userunp/dfscript"
+    }
+]
+  

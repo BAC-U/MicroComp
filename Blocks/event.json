@@ -1,0 +1,32 @@
+[
+    {
+        "type": "event",
+        "message0": "%1 EVENT %2 Event Type:%3",
+        "args0": [
+            {
+                "type": "field_image",
+                "src": "https://raw.githubusercontent.com/Owen1212055/mc-assets/main/assets/DIAMOND_BLOCK.png",
+                "width": 30,
+                "height": 30,
+                "alt": "Function",
+                "flipRtl": false
+            },
+            {
+                "type": "input_statement",
+                "name": "blox"
+            },
+            {
+                "type": "field_dropdown",
+                "name": "target",
+                "options": [
+                    ["Player Join","Player Join"],
+                    ["Player Leave","Player Leave"]
+                ]
+            }
+        ],
+        "colour": 230,
+        "tooltip": "New event",
+        "helpUrl": "https://github.com/userunp/dfscript"
+    }
+]
+  

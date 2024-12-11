@@ -1,0 +1,25 @@
+[
+    {
+        "type": "text",
+        "message0": "%1 Text ❛❛ %2 ❟❟",
+        "args0": [
+            {
+                "type": "field_image",
+                "src": "https://raw.githubusercontent.com/Owen1212055/mc-assets/main/assets/BOOK.png",
+                "width": 25,
+                "height": 25,
+                "alt": "Text value",
+                "flipRtl": false
+            },
+            {
+                "type": "field_input",
+                "name": "value",
+                "text": "value"
+            }
+        ],
+        "output": "Variable",
+        "colour": "0x644a17",
+        "tooltip": "",
+        "helpUrl": ""
+    }
+]

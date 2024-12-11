@@ -1,0 +1,38 @@
+[
+    {
+        "type": "game",
+        "message0": "%1 Game Action %2 Action: %4 Parameters: %3",
+        "args0": [
+            {
+                "type": "field_image",
+                "src": "https://raw.githubusercontent.com/Owen1212055/mc-assets/main/assets/NETHERRACK.png",
+                "width": 30,
+                "height": 30,
+                "alt": "Game Action",
+                "flipRtl": false
+            },
+            {
+                "type": "input_dummy"
+            },
+            {
+                "type": "input_statement",
+                "name": "args",
+                "check": ""
+            },           
+            {
+                "type": "field_dropdown",
+                "name": "action",
+                "options": [
+                    ["Broadcast Message",""]
+                ]
+            }
+
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "#cd4c4c",
+        "tooltip": "Do a player action",
+        "helpUrl": ""
+    }
+]

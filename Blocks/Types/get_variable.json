@@ -1,0 +1,28 @@
+[
+    {
+        "type": "get_variable",
+        "message0": "%1 Get Var. ❛❛ %2 ❟❟",
+        "args0": [
+            {
+                "type": "field_image",
+                "src": "https://raw.githubusercontent.com/Owen1212055/mc-assets/main/assets/SNOWBALL.png",
+                "width": 25,
+                "height": 25,
+                "alt": "Text value",
+                "flipRtl": false
+            },
+            {
+                "type": "field_input",
+                "name": "Value",
+                "text": "Variable Name"
+            }
+        ],
+        "output": "Variable",
+        "colour": 330,
+        "tooltip": "Get the value of a variable",
+        "helpUrl": ""
+      }
+]
+
+
+  

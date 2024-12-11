@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MicroCom</title>
+    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+      #blocklyDiv {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <link rel="stylesheet"href="style.css">
+  </head>
+  <body>
+    <div id="blocklyDiv"></div>
+    <button class="abs" onclick="compileBlocksToJson()">Compile</button>
+    <xml id="toolbox" style="display: none">
+      <category name="Class" colour="#5C81A6">
+        <block type="function"></block>
+        <block type="event"></block>
+      </category>
+      <category name="Actions" colour="#2d7b5d">
+        <block type="player"></block>
+        <block type="game"></block>
+        <block type="entity"></block>
+      </category>
+      <category name="Values" colour="#2d477b">
+        <block type="set_variable"></block>
+        <block type="get_variable"></block>
+        <block type="get_value"></block>
+        <block type="text"></block>
+      </category>
+    </xml>
+    <script>
+      var workspace = Blockly.inject('blocklyDiv', {
+        toolbox: document.getElementById('toolbox')
+      });
+
+      function loadBlocksFromFile(url) {
+        fetch(url)
+          .then(response => response.json())
+          .then(blocks => {
+            Blockly.defineBlocksWithJsonArray(blocks);
+          })
+          .catch(error => console.error('Error loading blocks:', error));
+      }
+
+      loadBlocksFromFile('Blocks/function.json');
+      loadBlocksFromFile('Blocks/event.json');
+      loadBlocksFromFile('Blocks/Actions/player.json');
+      loadBlocksFromFile('Blocks/Actions/entity.json');
+      loadBlocksFromFile('Blocks/Actions/game.json');
+      loadBlocksFromFile('Blocks/Types/get_variable.json');
+      loadBlocksFromFile('Blocks/Types/set_variable.json');
+      loadBlocksFromFile('Blocks/Types/get_value.json');
+      loadBlocksFromFile('Blocks/Types/text.json');
+      function getAllBlocks() {
+        var allBlocks = workspace.getAllBlocks();
+        console.log(allBlocks);
+        allBlocks.forEach(block => {
+          console.log('Block type:', block.type);
+        });
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
