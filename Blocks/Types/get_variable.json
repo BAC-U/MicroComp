@@ -1,7 +1,7 @@
 [
     {
         "type": "get_variable",
-        "message0": "%1 Get Var. ❛❛ %2 ❟❟",
+        "message0": "%1 Variable %2 ❟❟",
         "args0": [
             {
                 "type": "field_image",

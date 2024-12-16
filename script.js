@@ -1,38 +1,51 @@
+let has_dropdown = [
+    "event",
+    "game",
+    "player",
+    "entity"
+]
+let has_multiple_dropdown = [
+    "player",
+    "entity"
+]
+
 function compileWorkspaceToJson() {
-    const blocks = workspace.getAllBlocks();
+    const blocks = workspace.getAllBlocks().reverse();
     let bl2 = [];
-    let ids = [];
+    let blockMap = {}; 
+    
     console.clear();
     blocks.forEach(block => {
-        let bl = {};
-        bl = {
+        let bl = {
             id: block.id,
             type: block.type,
-            child: []
+            ptype: "",
+            pid: block.getSurroundParent() ? block.getSurroundParent().id : null, // for some reason thought this was only a typescript thing but I tried it and it worked yipppepepeppepep
+            data: [],
+            child: [],
+        };
+        if (has_dropdown.includes(bl.type)) {
+            bl.data.push(block.getFieldValue("type_drop"));
         }
-        if (block.getSurroundParent()) {
-            bl.ptype = block.getSurroundParent().type;
-            bl.pid = block.getSurroundParent().id;
-        } else {
-            bl.ptype = "";
-            bl.pid = "null"
+        if (has_multiple_dropdown.includes(bl.type)) {
+            bl.data.push(block.getFieldValue("type_drop_2"));
         }
-        console.log(bl);
-        bl2.push(bl); // use conact to keeep list reversedd
+        blockMap[bl.id] = bl; 
     });
-    bl2.forEach(block => {
-        let id = block.pid;
-        bl2.forEach(block2 => {
-            if (block2.id == id) {
-                block2.child.concat(block);
-                ids.concat(block.id);
+
+    blocks.forEach(block => {
+        let bl = blockMap[block.id];
+        if (bl.pid) {
+            let parent = blockMap[bl.pid];
+            if (parent) {
+                parent.child.unshift(bl); 
             }
-        });
-    });
-    for (let i = 0; i > bl2.length; i++) {
-        if (ids.includes(bl2[i].id)) {
-            bl2.splice(i,1);
+        } else {
+            bl2.unshift(bl); 
         }
-    }
-    console.log(JSON.stringify(bl2, null, 2));
+    })
+    let string = JSON.stringify(bl2, null, 2); //uwu json libary 
+    let base64String = btoa(string);
+    console.log(string);
+    console.log(base64String);
 }

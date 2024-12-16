@@ -17,10 +17,10 @@
             },
             {
                 "type": "field_dropdown",
-                "name": "target",
+                "name": "type_drop",
                 "options": [
-                    ["Player Join","Player Join"],
-                    ["Player Leave","Player Leave"]
+                    ["Join","0"],
+                    ["Leave","1"]
                 ]
             }
         ],

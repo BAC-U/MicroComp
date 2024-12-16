@@ -1,7 +1,7 @@
 [
     {
         "type": "entity",
-        "message0": "%1 Entity Action %2 Action: %5 Parameters: %3 Target: %4",
+        "message0": "%1 Entity Action %2 Action: %5 %3 Target: %4",
         "args0": [
             {
                 "type": "field_image",
@@ -20,22 +20,22 @@
             },
             {
                 "type": "field_dropdown",
-                "name": "target",
+                "name": "type_drop",
                 "options": [
-                    ["Default","Default"],
-                    ["Selection", "Selection"],
-                    ["Killer", "Killer"],
-                    ["Damager", "Damager"],
-                    ["Shooter", "Shooter"],
-                    ["Victim", "Victim"],
-                    ["AllPlayers", "AllPlayers"]
+                    ["Default","0"],
+                    ["Selection", "1"],
+                    ["Killer", "2"],
+                    ["Damager", "3"],
+                    ["Shooter", "4"],
+                    ["Victim", "5"],
+                    ["AllPlayers", "6"]
                 ]
             },           
             {
                 "type": "field_dropdown",
-                "name": "action",
+                "name": "type_drop_2",
                 "options": [
-                    ["Send Message",""]
+                    ["Set Velocity","0"]
                 ]
             }
 

@@ -1,7 +1,7 @@
 [
     {
         "type": "game",
-        "message0": "%1 Game Action %2 Action: %4 Parameters: %3",
+        "message0": "%1 Game Action %2 Action: %4 %3",
         "args0": [
             {
                 "type": "field_image",
@@ -21,9 +21,11 @@
             },           
             {
                 "type": "field_dropdown",
-                "name": "action",
+                "name": "type_drop",
                 "options": [
-                    ["Broadcast Message",""]
+                    ["Shutdown Server","0"],
+                    ["Broadcast Message","1"],
+                    ["Log Message","2"]
                 ]
             }
 
